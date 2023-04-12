@@ -1,0 +1,134 @@
+Array ---> it enables storing a collection of multiple items under a single variable name and has members 
+for performing common array operations.
+indexing---> koi bhi element pehle element se kitne door hai
+arr[6] means pehle element ke 6 kadam aage, to arr[6] pehle element se 6 kadam aage hai to pehla element
+pehle element se kitna kadam aage hua i.e. 0
+JS arrays are resizable and can contain mix of different data types.
+
+// Array methods and empty slots //
+Empty slots in sparse arrays behave inconsistently btween array methods. generally, the older methods will 
+skip empty slots, while newer ones treat them as undefined.
+- concat() --> Returns a new array that is the calling array joined with other array(s) and/or value(s).
+- copyWithin() -->Copies a sequence of array elements within an array.
+- every() --> Returns true if every element in the calling array satisfies the testing function.
+- filter() --> Returns a new array containing all elements of the calling array for which the provided filtering
+                function returns true
+- flat() --> Returns a new array with all sub-array elements concatenated into it recursively up to the specified depth.
+- flatMap() --> Returns a new array formed by applying a given callback function to each element of the calling array, 
+                and then flattening the result by one level.
+- forEach() --> Calls a function for each element in the calling array
+- indexOf() --> Returns the first (least) index at which a given element can be found in the calling array.
+- lastIndexOf() --> Returns the last (greatest) index at which a given element can be found in the calling array, 
+                or -1 if none is found.
+- map() --> Returns a new array containing the results of invoking a function on every element in the calling array.
+- reduce() -->Executes a user-supplied "reducer" callback function on each element of the array (from left to 
+                right), to reduce it to a single value.
+- reduceRight() --> Executes a user-supplied "reducer" callback function on each element of the array (from 
+                    right to left), to reduce it to a single value
+- reverse() --> Reverses the order of the elements of an array in place. (First becomes the last, 
+                last becomes first.)
+- slice() --> Extracts a section of the calling array and returns a new array.
+- some() --> Returns true if at least one element in the calling array satisfies the provided testing function.
+- sort() --> Sorts the elements of an array in place and returns the array.
+- splice() -->Adds and/or removes elements from an array.
+
+// These methods treat empty slots as if they are undefined: //
+- entries() --> Returns a new array iterator object that contains the key/value pairs for each index in an array.
+- fill() -->Fills all the elements of an array from a start index to an end index with a static value.
+- find() -->Returns the value of the first element in the array that satisfies the provided testing function, or 
+            undefined if no appropriate element is found.
+- findIndex() --> Returns the index of the first element in the array that satisfies the provided testing 
+                    function, or -1 if no appropriate element was found.
+- findLast() --> Returns the value of the last element in the array that satisfies the provided testing function, 
+                or undefined if no appropriate element is found.
+- findLastIndex() --> Returns the index of the last element in the array that satisfies the provided testing 
+                    function, or -1 if no appropriate element was found.
+- group() --> Groups the elements of an array into an object according to the strings returned by a test function.
+- groupToMap() --> Groups the elements of an array into a Map according to values returned by a test function.
+- includes() --> Determines whether the calling array contains a value, returning true or false as appropriate.
+- join() --> Joins all elements of an array into a string.
+- keys() --> Returns a new array iterator that contains the keys for each index in the calling array.
+- toLocaleString() --> Returns a localized string representing the calling array and its elements. 
+                        Overrides the Object.prototype.toLocaleString() method.
+- values() --> Adds one or more elements to the front of an array, and returns the new length of the array.
+
+// Copying methods and mutating methods
+Some methods do not mutate the existing array that the method was called on, but instead return a new array. 
+They do so by first accessing this.constructor[Symbol.species] to determine the constructor to use for the
+new array. The newly constructed array is then populated with elements. The copy always happens 
+shallowly — the method never copies anything beyond the initially created array. Elements of the 
+original array(s) are copied into the new array as follows:
+
+Objects: the object reference is copied into the new array. Both the original and new array refer to the same 
+object. That is, if a referenced object is modified, the changes are visible to both the new and original 
+arrays.
+
+Primitive types such as strings, numbers and booleans (not String, Number, and Boolean objects): their values 
+are copied into the new array.
+
+Other methods mutate the array that the method was called on, in which case their return value differs 
+depending on the method: sometimes a reference to the same array, sometimes the length of the new array.
+
+The following methods create new arrays with @@species:
+
+concat()
+filter()
+flat()
+flatMap()
+map()
+slice()
+splice() (to construct the array of removed elements that's returned)
+
+The following methods mutate the original array:
+
+copyWithin()
+fill()
+pop() --> Removes the last element from an array and returns that element.
+push() --> Adds one or more elements to the end of an array, and returns the new length of the array.
+reverse()
+shift() -->Removes the first element from an array and returns that element.
+sort()
+splice()
+unshift() --> Adds one or more elements to the front of an array, and returns the new length of the array.
+
+Iterative methods
+Many array methods take a callback function as an argument. The callback function is called sequentially and 
+at most once for each element in the array, and the return value of the callback function is used to 
+determine the return value of the method. 
+
+The following methods are iterative:
+
+every()
+filter()
+find()
+findIndex()
+findLast()
+findLastIndex()
+flatMap()
+forEach()
+group()
+groupToMap()
+map()
+some()
+In particular, every(), find(), findIndex(), findLast(), findLastIndex(), and some() do not always invoke 
+callbackFn on every element — they stop iteration as soon as the return value is determined.
+
+Static methods
+Array.from()
+Creates a new Array instance from an array-like object or iterable object.
+
+Array.isArray()
+Returns true if the argument is an array, or false otherwise.
+
+Array.of()
+Creates a new Array instance with a variable number of arguments, regardless of number or type of the 
+arguments.
+
+Array.prototype.length
+Reflects the number of elements in an array.
+
+Array.prototype.at()
+Returns the array item at the given index. Accepts negative integers, which count back from the last item.
+
+Array.prototype.toString()
+Returns a string representing the calling array and its elements. Overrides the Object.prototype.toString() method.

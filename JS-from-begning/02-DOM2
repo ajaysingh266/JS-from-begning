@@ -1,0 +1,26 @@
+// new Audio("")       // by default , audio src is a tune
+// .play()         // playing audio
+
+// generate random hex color code
+// Math.floor(Math.random() * 0xffffff).toString(16)           // 0xffffff is equal to 16777215
+
+// creating new html element
+// .createElement("li", null, "hello")       // first parameter is tag, second is property & third is content
+
+// add class through js
+// .classList.add("classname");
+
+// gets or sets html element property
+// .innerHTML               ////The Element property innerHTML gets or sets the HTML contained within the element.
+
+// navigator        //JavaScript navigator object is used for browser detection
+// navigator.clipboard.writeText()              // copying the text of clipboard
+
+// Blob             //The Blob object represents a blob, which is a file-like object of immutable, raw data; they can 
+// be read as text or binary data, or converted into a ReadableStream so its methods can be used for processing the data.
+// new Blob(blobContent, MimeType);
+
+// URL.createObjectURL();       create a URL that represent passed object
+
+// .download            // passing file as downlaod value of link
+// .href                

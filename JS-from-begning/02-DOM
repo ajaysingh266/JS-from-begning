@@ -1,0 +1,112 @@
+DOM--> With the HTML DOM, JavaScript can access and change all the elements of an HTML document
+When a web page is loaded, the browser creates a Document Object Model of the page.
+The HTML DOM model is constructed as a tree of Objects:
+
+With the object model, JavaScript gets all the power it needs to create dynamic HTML:
+JavaScript can change all the HTML elements in the page
+JavaScript can change all the HTML attributes in the page
+JavaScript can change all the CSS styles in the page
+JavaScript can remove existing HTML elements and attributes
+JavaScript can add new HTML elements and attributes
+JavaScript can react to all existing HTML events in the page
+JavaScript can create new HTML events in the page
+
+"Document Object Model (DOM) is a platform and language-neutral interface that allows programs and scripts to 
+dynamically access and update the content, structure, and style of a document."
+DOM methods are actions you can perform (like add or deleting an HTML element).
+DOM properties are values that you can set or change(like changing the content of an HTML element).
+In the DOM, all HTML elements are defined as objects.
+
+Finding HTML Elements
+Method	                                    Description
+document.getElementById(id)         	    Find an element by element id
+document.getElementsByTagName(name)	        Find elements by tag name
+document.getElementsByClassName(name)	    Find elements by class name
+
+Changing HTML Elements
+Property	                                Description
+element.innerHTML =  new html content	    Change the inner HTML of an element
+element.attribute = new value	            Change the attribute value of an HTML element
+element.style.property = new style	        Change the style of an HTML element
+
+Method	                                    Description
+element.setAttribute(attribute, value)	    Change the attribute value of an HTML element
+
+Adding and Deleting Elements
+Method	                                    Description
+document.createElement(element)	            Create an HTML element
+document.removeChild(element)	            Remove an HTML element
+document.appendChild(element)	            Add an HTML element
+document.replaceChild(new, old)	            Replace an HTML element
+document.write(text)	                    Write into the HTML output stream
+
+Adding Events Handlers
+Method	                                                    Description
+document.getElementById(id).onclick = function(){code}	    Adding event handler code to an onclick event
+
+Finding HTML Objects
+Property	                                    Description	
+document.anchors	                        Returns all <a> elements that have a name attribute	
+document.baseURI	                        Returns the absolute base URI of the document	
+document.body	                            Returns the <body> element	
+document.cookie	                            Returns the document's cookie	
+document.doctype	                        Returns the document's doctype	3
+document.documentElement	                Returns the <html> element	3
+document.documentMode	                    Returns the mode used by the browser	3
+document.documentURI	                    Returns the URI of the document	3
+document.domain	                            Returns the domain name of the document server	1
+document.embeds	                            Returns all <embed> elements	3
+document.forms	                            Returns all <form> elements	1
+document.head	                            Returns the <head> element	3
+document.images	                            Returns all <img> elements	1
+document.implementation	                    Returns the DOM implementation	3
+document.inputEncoding	                    Returns the document's encoding (character set)	3
+document.lastModified	                    Returns the date and time the document was updated	3
+document.links	                            Returns all <area> and <a> elements that have a href attribute	1
+document.readyState	                        Returns the (loading) status of the document	3
+document.referrer	                        Returns the URI of the referrer (the linking document)	1
+<!-- document.scripts	                        Returns all <script> elements	3 -->
+document.strictErrorChecking	            Returns if error checking is enforced	3
+document.title	                            Returns the <title> element	1
+document.URL	                            Returns the complete URL of the document
+
+Finding HTML Elements by CSS Selectors
+If you want to find all HTML elements that match a specified CSS selector (id, class names, types, attributes, 
+values of attributes, etc), use the querySelectorAll() method.
+
+Changing HTML Content
+document.getElementById(id).innerHTML = new HTML
+Changing the Value of an Attribute
+document.getElementById(id).attribute = new value
+
+Assign Events Using the HTML DOM
+document.getElementById("myBtn").onclick = displayDate;
+
+The onmouseover and onmouseout Events
+The onmouseover and onmouseout events can be used to trigger a function when the user mouses over,
+ or out of, an HTML element:
+The onmousedown, onmouseup and onclick Events
+The onmousedown, onmouseup, and onclick events are all parts of a mouse-click. First when a mouse-button is 
+clicked, the onmousedown event is triggered, then, when the mouse-button is released, the onmouseup event is 
+triggered, finally, when the mouse-click is completed, the onclick event is triggered.
+
+addEventListener() method
+document.getElementById("myBtn").addEventListener("click", displayDate);
+The addEventListener() method attaches an event handler to the specified element.
+
+The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+You can add many event handlers to one element.
+You can add many event handlers of the same type to one element, i.e two "click" events.
+You can add event listeners to any DOM object not only HTML elements. i.e the window object.
+The addEventListener() method makes it easier to control how the event reacts to bubbling.
+You can easily remove an event listener by using the removeEventListener() method.
+
+Syntax
+element.addEventListener(event, function, useCapture);
+Event Bubbling or Event Capturing?
+There are two ways of event propagation in the HTML DOM, bubbling and capturing.
+Event propagation is a way of defining the element order when an event occurs. If you have a <p> element inside a <div> element, and the user clicks on the <p> element, which element's "click" event should be handled first?
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+With the addEventListener() method you can specify the propagation type by using the "useCapture" parameter:
+addEventListener(event, function, useCapture);
